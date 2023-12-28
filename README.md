@@ -16,4 +16,4 @@ nbcfwei.R: Contains all the main functions related to the cure fraction Weibull 
 3.- "cod_simulation_study.R": Contains the programming for the tables in the simulation study.
 
 ## Reference
-[in progress...]
+Jerez-Lillo N, Tapia A, Lachos V, Ramos P. A new piecewise power-law cure fraction model: diagnostic analytics and medical application.
