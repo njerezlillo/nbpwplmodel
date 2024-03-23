@@ -31,11 +31,15 @@ nbcfwei.R: Contains all the main functions related to the cure fraction Weibull 
 "kidney.csv": Corresponds to the database used.
 
 ## Simulation Study.
-1.- "Scenarios.R": Contains the cases considered in the simulation study.
 
-2.- "generation_samples.R": Contains the codes used to generate and export all the replicas used (to reduce computational time).
+"scenarios.R": Contains a brief exploration of the cases considered in the simulation study.
 
-3.- "cod_simulation_study.R": Contains the programming for the tables in the simulation study.
+"print_results.R": Contains the programming for the tables in the simulation study.
+
+"sim_1.RData": RData object with all results of the first case in the simulation study (Sim_1.R)
+
+"sim_2.RData": RData object with all results of the first case in the simulation study (Sim_2.R)
 
 ## Reference
+
 Jerez-Lillo N, Tapia A, Lachos V, Ramos P. A new piecewise power-law cure fraction model: diagnostic analytics and medical application.
