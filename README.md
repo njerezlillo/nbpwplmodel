@@ -1,14 +1,14 @@
 # A new regression piecewise power-law cure fraction model: diagnostic analytics and medical application
 
-pwpowerlaw.R: Contains all the main functions related to the piecewise power-law model.
+"pwpowerlaw.R": Contains all the main functions related to the piecewise power-law model.
 
-nbpwpl.R: Contains all the main functions related to the NBPWPL regression model.
+"nbpwpl.R": Contains all the main functions related to the NBPWPL regression model.
 
-pwexp.R: Contains all the main functions related to the piecewise exponential model.
+"pwexp.R": Contains all the main functions related to the piecewise exponential model.
 
-nbpwexp.R: Contains all the main functions related to the NBPWPE regression model.
+"nbpwexp.R": Contains all the main functions related to the NBPWPE regression model.
 
-nbcfwei.R: Contains all the main functions related to the cure fraction Weibull model.
+"nbcfwei.R": Contains all the main functions related to the cure fraction Weibull model.
 
 ## Application:
 
