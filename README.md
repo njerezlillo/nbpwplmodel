@@ -6,7 +6,9 @@
 
 "pwexp.R": Contains all the main functions related to the piecewise exponential model.
 
-"nbpwexp.R": Contains all the main functions related to the NBPWPE regression model.
+"nbpwexp.R": Contains all the main functions related to the NBPWEXP regression model.
+
+"nbpwpexp.R": Contains all the main functions related to the NBPWPEXP regression model.
 
 "nbcfwei.R": Contains all the main functions related to the cure fraction Weibull model.
 
@@ -26,7 +28,9 @@
 
 "7 nbpwpl_post_deletion.R": Contains codes for the post-deletion analysis of the deleted observations.
 
-"8 nbpwexp_results.R": Contains all codes for estimating the parameters of the NBPWPE model.
+"8 model_comparison.R": Contains codes for comparing the goodness-of-fit of all tested models.
+
+"9 nbpwpl_mean_residual_file.R": Contains codes for computing the mean residual time function.
 
 "kidney.csv": Corresponds to the database used.
 
@@ -36,9 +40,9 @@
 
 "print_results.R": Contains the programming for the tables in the simulation study.
 
-"sim_1.RData": RData object with all results of the first case in the simulation study (Sim_1.R)
+"sim_i.R": Script for generating the tables related to Case i in the simulation study.
 
-"sim_2.RData": RData object with all results of the first case in the simulation study (Sim_2.R)
+"sim_tau_i.R": Script for generating the tables related to the change points in the i-th scenario.
 
 ## Reference
 
