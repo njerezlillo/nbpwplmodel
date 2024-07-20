@@ -35,22 +35,22 @@ ggsave("./Application/km_disease.pdf", width = 8, height = 5)
 
 # Cure fraction weibull model ---------------------------------------------
 
-l_wei <- function(w) loglik_nbpwwei(w, df[, -c(4, 5)], q)
+l_wei <- function(w) loglik_nbpwwei(w, df[, -c(4, 5)] %>% mutate(time = time - 1), q)
 
 fit_wei <-
-  maxBFGS(
+  maxCG(
     l_wei,
     start = c(2, 2, 1, 1),
     constraints = list(
       ineqA = cbind(diag(c(1, 1)), matrix(0, ncol = 2, nrow = 2)),
-      ineqB = c(0.01, 0.01)
+      ineqB = c(-0.01, -0.01)
     )
   )
 
 theta <- fit_wei$estimate
 
-s_AA <- Vectorize(function(x) snbpwwei(x + 1, q, plogis(theta[3]), theta[1:2]), "x")
-s_CMSN <- Vectorize(function(x) snbpwwei(x + 1, q, plogis(sum(theta[3:4])), theta[1:2]), "x")
+s_AA <- Vectorize(function(x) snbpwwei(x, q, plogis(theta[3]), theta[1:2]), "x")
+s_CMSN <- Vectorize(function(x) snbpwwei(x, q, plogis(sum(theta[3:4])), theta[1:2]), "x")
 
 ggsurvplot(fit_km_disease, palette = rep("gray90", 2),
            conf.int = F, ggtheme = theme_bw(), size = 0.5,

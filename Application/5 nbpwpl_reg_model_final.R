@@ -21,6 +21,7 @@ target <- function(w) {
 
 fit <- optim(fn = target, par = rep(0, 9), method = "CG", hessian = T)
 round(2 * 9 + 2 * fit$value, 2) # AIC
+round(log(nrow(df)) * 9 + 2 * fit$value, 2) # BIC
 H <- solve(fit$hessian)
 se <- H %>% diag %>% sqrt
 
@@ -76,7 +77,7 @@ s_2 <- Vectorize(function(x) snbpwpl(x + 1, q, Alpha[4, 4], Alpha[4, 1:3], p))
 s_3 <- Vectorize(function(x) snbpwpl(x + 1, q, Alpha[6, 4], Alpha[6, 1:3], p))
 
 fit_km <- 
-  survfit(Surv(time, status) ~ disease + age,
+  survfit(Surv(time, status) ~ disease + age + gender,
           data = df[-c(39, 40, 50, 172),] %>% 
             mutate(time = time - 1))
 

@@ -28,6 +28,12 @@ fig_Bi_cw <-
   geom_segment(aes(x = 0, y = mean(I_cw$Bi) + 3.5 * sd(I_cw$Bi), 
                    xend = max(df$time) - 1, yend = mean(I_cw$Bi) + 3.5 * sd(I_cw$Bi)),
               col = "gray70", lty = 2) +
+  geom_segment(aes(x = p[2] - 1, y = 0, 
+                   xend = p[2] - 1, yend = mean(I_cw$Bi) + 3.5 * sd(I_cw$Bi)),
+               col = "gray70", lty = 2) +
+  geom_segment(aes(x = p[3] - 1, y = 0, 
+                   xend = p[3] - 1, yend = mean(I_cw$Bi) + 3.5 * sd(I_cw$Bi)),
+               col = "gray70", lty = 2) +
   annotate("text", label = "cut-off = 0.00587",
     x = 13.5, y = mean(I_cw$Bi) + 3.8 * sd(I_cw$Bi), 
     size = 4, colour = "black") +
@@ -62,6 +68,12 @@ fig_Bi_rs <-
   geom_segment(aes(x = 0, y = mean(I_rs$Bi) + 3.5 * sd(I_rs$Bi), 
                    xend = max(df$time) - 1, 
                    yend = mean(I_rs$Bi) + 3.5 * sd(I_rs$Bi)),
+               col = "gray70", lty = 2) +
+  geom_segment(aes(x = p[2] - 1, y = 0, 
+                   xend = p[2] - 1, yend = mean(I_rs$Bi) + 3.5 * sd(I_rs$Bi)),
+               col = "gray70", lty = 2) +
+  geom_segment(aes(x = p[3] - 1, y = 0, 
+                   xend = p[3] - 1, yend = mean(I_rs$Bi) + 3.5 * sd(I_rs$Bi)),
                col = "gray70", lty = 2) +
   annotate("text", label = "cut-off = 0.00647",
            x = 13.5, y = mean(I_rs$Bi) + 3.9 * sd(I_rs$Bi),
