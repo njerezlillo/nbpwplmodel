@@ -12,7 +12,7 @@
 
 "nbcfwei.R": Contains all the main functions related to the cure fraction Weibull model.
 
-## Application:
+## Application
 
 "1 descriptive.R": Contains the script for all the exploratory analysis performed in the application.
 
@@ -34,7 +34,7 @@
 
 "kidney.csv": Corresponds to the database used.
 
-## Simulation Study.
+## Simulation Study
 
 "scenarios.R": Contains a brief exploration of the cases considered in the simulation study.
 
