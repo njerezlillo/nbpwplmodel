@@ -40,7 +40,7 @@
 
 "print_results.R": Contains the programming for the tables in the simulation study.
 
-"sim_i.R": Script for generating the tables related to Case i in the simulation study.
+"sim_i.R": Script for generating the tables related to case i in the simulation study.
 
 "sim_tau_i.R": Script for generating the tables related to the change points in the i-th scenario.
 
