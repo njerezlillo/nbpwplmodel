@@ -1,7 +1,7 @@
 require(numDeriv)
 require(parallel)
 require(doParallel)
-source("pwpowerlaw.R")
+#source("pwpowerlaw.R")
 source("nbpwpl.R")
 load("preliminar2.RData")
 
