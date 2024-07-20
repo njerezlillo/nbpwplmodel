@@ -1,4 +1,4 @@
-require(fastDummies)
+#require(fastDummies)
 require(numDeriv)
 
 # q = -1 : bernoulli cure fraction
@@ -92,13 +92,6 @@ loglik_nbpwwei <- function(arg, D, q) {
   aux1 <- D_nbpwwei(D_obs, beta, q, alpha)
   aux2 <- S_nbpwwei(D_cen, beta, q, alpha)
   sum(log(aux1)) + sum(log(aux2))
-}
-
-loglik_nbpwwei_lasso <- function(arg, D, q, l) {
-  n_beta <- ncol(D[,-(1:2)])
-  beta <- arg[((length(arg) - n_beta + 1):length(arg))]
-  
-  - loglik_nbpwwei(arg, D, q) + l * sum(abs(beta[-1]))
 }
 
 # Part 3 ------------------------------------------------------------------
