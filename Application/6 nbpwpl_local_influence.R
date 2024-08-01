@@ -1,9 +1,9 @@
-library(stringr)
 library(dplyr)
 library(maxLik)
+library(xtable)
+library(stringr)
 library(survival)
 library(survminer)
-library(xtable)
 source("nbpwpl.R")
 
 # Dataset -----------------------------------------------------------------
@@ -99,8 +99,12 @@ fig_Ui_rs <-
 
 # out
 plot_influence <- gridExtra::grid.arrange(fig_Bi_cw, fig_Bi_rs, ncol = 2)
-ggsave(plot = plot_influence, "./Application/bi_influence.pdf",
-       height = 5, width = 10)
+ggsave(plot = plot_influence, "./Application/Figure4.eps",
+       height = 5, width = 10,
+       dpi = 600, device = "eps", units = "in")
+ggsave(plot = plot_influence, "./Application/Figure4.tif",
+       width = 10, height = 5,
+       dpi = 600, device = "tiff")
 
 # CW: post-deletion analysis ----------------------------------------------
 

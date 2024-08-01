@@ -1,7 +1,8 @@
+library(cuRe)
 library(dplyr)
+library(maxLik)
 library(survival)
 library(survminer)
-library(cuRe)
 source("nbpwpl.R")
 source("nbcfwei.R")
 
@@ -31,7 +32,10 @@ ggsurvplot(fit_km_disease, palette = c("#E7B800", "#2E9FDF"),
            legend.title = "Disease", size = 0.5, censor = F) +
   labs(x = "Duration (years)", y = "Survival Rate")
 
-ggsave("./Application/km_disease.pdf", width = 8, height = 5)
+ggsave("./Application/Figure1.eps", width = 8, height = 5,
+       dpi = 600, device = "eps", units = "in")
+ggsave("./Application/Figure1.tif", width = 8, height = 5,
+       dpi = 600, device = "tiff")
 
 # Cure fraction weibull model ---------------------------------------------
 
@@ -62,6 +66,10 @@ ggsurvplot(fit_km_disease, palette = rep("gray90", 2),
   scale_colour_manual("Disease", values = 
                        c("A&A" = "#FEB24C",
                          "CM&SN" = "#2C7FB8"))
-ggsave("./Application/wei_cure_disease.pdf", width = 8, height = 5)
+
+ggsave("./Application/Figure2.eps", width = 8, height = 5,
+       dpi = 600, device = "eps", units = "in")
+ggsave("./Application/Figure2.tif", width = 8, height = 5,
+       dpi = 600, device = "tiff")
 
 save.image("./Application/run_script_1.RData")

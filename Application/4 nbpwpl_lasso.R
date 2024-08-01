@@ -1,10 +1,10 @@
-library(stringr)
 library(dplyr)
 library(maxLik)
 library(xtable)
+library(stringr)
 library(survival)
-library(survminer)
 library(parallel)
+library(survminer)
 library(doParallel)
 source("nbpwpl.R")
 
@@ -110,7 +110,12 @@ fig2 <- ggplot(lambdas) + aes(x = lambda, y = npar) +
                      labels = scaleFUN) 
 
 plot_final <- gridExtra::grid.arrange(fig1, fig2, ncol = 2)
-ggsave(plot = plot_final, "./Application/bic_lambda.pdf", height = 4, width = 12)
+ggsave(plot = plot_final, "./Application/FigureF2.eps", 
+       height = 4, width = 12,
+       dpi = 600, device = "eps", units = "in")
+ggsave(plot = plot_final, "./Application/FigureF2.tif",
+       width = 12, height = 4,
+       dpi = 600, device = "tiff")
 
 # Out ---------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
-library(stringr)
 library(dplyr)
 library(maxLik)
 library(xtable)
+library(stringr)
 library(survival)
 library(survminer)
 source("nbpwpl.R")
@@ -92,7 +92,10 @@ ggsurvplot(fit_km, legend = "none", palette = rep("gray90", 9),
                        c("Group I" = "#E34A33", "Group III" = "#2C7FB8",
                          "Group II" = "#FEB24C"))
 
-ggsave("./Application/fit_nbpwpl_model.pdf", width = 8, height = 5)
+ggsave("./Application/Figure3.eps", width = 8, height = 5,
+       dpi = 600, device = "eps", units = "in")
+ggsave("./Application/Figure3.tif", width = 8, height = 5,
+       dpi = 600, device = "tiff")
 
 # RQR ---------------------------------------------------------------------
 
@@ -119,7 +122,10 @@ ggplot() + aes(x = km_ei$surv, y = exp(-km_ei$time)) +
   geom_abline(intercept = 0, slope = 1, color = "red", size = 1.2) +
   labs(x = "S(ei): Kaplan-Meier", y = "S(ei): Standard Exponential")
 
-ggsave("./Application/cox_snell.pdf", width = 8, height = 4)
+ggsave("./Application/FigureF3.eps", width = 8, height = 4,
+       dpi = 600, device = "eps", units = "in")
+ggsave("./Application/FigureF3.tif", width = 8, height = 4,
+       dpi = 600, device = "tiff")
 
 save(df, p, q, zero_position, coef_final, H, Alpha, n,
      file = "./Application/preliminar3.RData")
