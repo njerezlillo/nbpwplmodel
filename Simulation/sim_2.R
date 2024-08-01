@@ -92,5 +92,3 @@ estimates <- foreach(z = c(750, 1000, 1250)) %dopar% { FF(z) }
 proc.time() - ptm #final
 
 estimates
-
-save(estimates, file = "sim_2.RData")
