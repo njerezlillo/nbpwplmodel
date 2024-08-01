@@ -66,5 +66,11 @@ fig_3 <-
   theme_bw() + labs(x = "Time", y = "Survival")
 
 plot_scenarios<- gridExtra::grid.arrange(fig_1, fig_2, fig_3, ncol = 3)
-ggsave(plot = plot_scenarios, "./Simulation/scenarios.pdf", height = 5, width = 12)
+ggsave(plot = plot_scenarios, "./Simulation/FigureB1.eps", 
+       height = 5, width = 12,
+       dpi = 600, device = "eps", units = "in")
+ggsave(plot = plot_scenarios, "./Simulation/FigureB1.tif",
+       width = 12, height = 5,
+       dpi = 600, device = "tiff")
+
 
